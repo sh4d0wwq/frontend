@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Профиль</title>
+  <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-card">
+      <div class="avatar-wrapper">
+        <label id="avatar-label" >
+          <img id="avatar" src="/assets/default-avatar.svg" alt="Avatar" class="avatar"/>
+        </label>
+        <input type="file" id="avatar-upload" accept="image/*" hidden />
+      </div>
+
+      <div class="profile-field">
+        <label>Никнейм:</label>
+        <span id="nickname-text"></span>
+        <input id="nickname-input" class="hidden" type="text"/>
+      </div>
+
+      <div class="profile-field">
+        <label>Email:</label>
+        <span id="email-text"></span>
+      </div>
+
+      <div class="profile-actions">
+        <button id="edit-btn">Редактировать профиль</button>
+        <button id="cancel-btn" class="hidden"> Отмена</button>
+        <button id="save-btn" class="hidden" onclick="saveProfile()">Сохранить изменения</button>
+        <button id="change-password-btn">Изменить пароль</button>
+      </div>
+
+      <div id="password-fields" class="hidden">
+        <input type="password" id="new-password" placeholder="Новый пароль" />
+        <input type="password" id="confirm-password" placeholder="Повторите пароль" />
+        <button id="cancel-password-btn" class="hidden"> Отмена</button>
+        <button id="save-password-btn" class="hidden" onclick="savePassword()">Сохранить пароль</button>
+      </div>
+
+      <button id="back-to-chats" >Назад к чатам</button>
+    </div>
+  </div>
+
+  <script src="../js/profile.js"></script>
+</body>
+</html>

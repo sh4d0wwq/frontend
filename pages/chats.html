@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Чаты</title>
+  <link rel="stylesheet" href="../css/chats.css" />
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-list">
+      <div class="user-search-container">
+        <input type="text" id="user-search-input" placeholder="Поиск пользователей..." />
+      </div>
+      <h3>Чаты</h3>
+      <ul id="chats"></ul>
+
+      <div id="user-profile-container" style="cursor: pointer;">
+        <img id="user-avatar" alt="Avatar" />
+        <span id="user-username">Username</span>
+      </div>
+    </div>
+
+    <div class="chat-window">
+      <div class="chat-header">
+        <h2 style="display: inline;" id="chat-name"> Выберите чат</h2>
+        <div id="chat-actions" class="chat-actions hidden">
+          <button class="add-user-btn">➕</button>
+          <button class="delete-chat-btn">🗑️</button>
+        </div>
+      </div>
+      <div id="messages" class="messages"></div>
+      <div class="message-input-container">
+        <div class="input-wrapper">
+          <input type="file" id="attachment-input" style="display:none" />
+          <button id="attach-button" title="Прикрепить файл">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="#555">
+              <path d="M0 0h24v24H0z" fill="none"/>
+              <path d="M16.5,6.5l-6.59,6.59c-1.17,1.17-3.07,1.17-4.24,0s-1.17-3.07,0-4.24L14.83,4c1.95-1.95,5.12-1.95,7.07,0s1.95,5.12,0,7.07 l-9.19,9.19c-2.34,2.34-6.14,2.34-8.48,0s-2.34-6.14,0-8.48l1.41,1.41c-1.56,1.56-1.56,4.1,0,5.66s4.1,1.56,5.66,0l9.19-9.19 c1.17-1.17,1.17-3.07,0-4.24s-3.07-1.17-4.24,0L7.91,12.09c-0.39,0.39-0.39,1.02,0,1.41c0.39,0.39,1.02,0.39,1.41,0L16.5,6.5z"/>
+            </svg>
+          </button>
+          <span id="selected-file-info" class="selected-file-info hidden">
+            <span id="selected-file-name"></span>
+            <button id="cancel-attachment-button" title="Удалить вложение">✖</button>
+          </span>
+          <input type="text" id="message-input" placeholder="Введите сообщение..." />
+        </div>
+        <button id="send-btn" title="Отправить">
+          <svg xmlns="http://www.w3.org/2000/svg" height="22" viewBox="0 0 24 24" width="22" fill="white">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3.4,20.4l17.4-8.4L3.4,3.6v6.9l12.6,1.5L3.4,13.8V20.4z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="user-search-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" id="close-modal">&times;</span>
+      <h3>Результаты поиска</h3>
+      <ul id="user-search-results"></ul>
+    </div>
+  </div>
+
+  <div id="add-user-modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="add-user-close-btn" class="close-btn">&times;</span>
+      <h3>Добавить пользователя в чат</h3>
+      <input type="text" id="add-user-search-input" placeholder="Поиск по имени...">
+      <ul id="add-user-search-results"></ul>
+    </div>
+  </div>
+
+
+  <script src="../js/chats.js"></script>
+</body>
+</html>

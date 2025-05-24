@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication</title>
+  <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+  <div class="auth-container">
+    <form id="auth-form">
+      <h2 id="form-title">Login</h2>
+
+      <div id="username-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+
+      <div id="email-group" style="display: none;">
+        <label for="email" class="email-label">Email</label>
+        <input type="email" id="email" name="email">
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <button type="submit" id="submit-btn">Login</button>
+
+      <p id="error-message" class="error-message"></p>
+
+      <p>
+        <a href="#" id="toggle-auth">Don't have an account? Register</a>
+      </p>
+    </form>
+  </div>
+
+  <script src="../js/auth.js"></script>
+</body>
+</html>
