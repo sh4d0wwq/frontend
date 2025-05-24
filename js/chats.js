@@ -409,11 +409,11 @@ function renderUserSearchResults(users) {
     avatar.classList.add('user-avatar');
     avatar.src = user.avatar_url
       ? `http://localhost:8001/users/avatar/${user.avatar_url}`
-      : `https://api.dicebear.com/7.x/thumbs/svg?seed=${user.username}`;
+      : `https://api.dicebear.com/7.x/thumbs/svg?seed=${user.nickname}`;
     avatar.alt = 'Avatar';
 
     const nameSpan = document.createElement('span');
-    nameSpan.textContent = user.username;
+    nameSpan.textContent = user.nickname;
     nameSpan.classList.add('user-name');
 
     const openChatBtn = document.createElement('button');
@@ -572,11 +572,11 @@ addUserSearchInput.addEventListener('input', async () => {
       avatar.classList.add('user-avatar');
       avatar.src = user.avatar_url
         ? `http://localhost:8001/users/avatar/${user.avatar_url}`
-        : `https://api.dicebear.com/7.x/thumbs/svg?seed=${user.username}`;
+        : `https://api.dicebear.com/7.x/thumbs/svg?seed=${user.nickname}`;
       avatar.alt = 'Avatar';
 
       const nameSpan = document.createElement('span');
-      nameSpan.textContent = user.username;
+      nameSpan.textContent = user.nickname;
       nameSpan.classList.add('user-name');
 
       li.addEventListener('click', async () => {
